@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 
 class RadioView: UIView {
+    typealias ChangeOnCompletionHandler = (RadioView,Bool) -> Void
+
     // should select one item at least
     static var optional:Bool = false;
     @IBOutlet var  other:[RadioView]!
-    typealias ChangeOnCompletionHandler = (RadioView,Bool) -> Void
     
      var isSelected: Bool=false{
         didSet{

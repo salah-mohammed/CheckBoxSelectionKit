@@ -9,10 +9,8 @@
 import UIKit
 
 class StatusButton: UIButton {
-    
-
     typealias ChangeOnCompletionHandler = (StatusButton,Any) -> Void
-
+    
     var changeOnCompletionHandler:ChangeOnCompletionHandler!
     var status:Any!{
         didSet{

@@ -7,10 +7,13 @@
 //
 
 import UIKit
-
+struct Constant {
+    public  struct Handlers {
+        
+    }
+}
 class CheckButton: UIButton {
     typealias ChangeOnCompletionHandler = (CheckButton,Bool) -> Void
-    
     var changeOnCompletionHandler:ChangeOnCompletionHandler!
     var on:Bool=false{
         didSet{

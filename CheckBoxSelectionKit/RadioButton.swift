@@ -9,11 +9,9 @@
 import UIKit
 
 class RadioButton: UIButton {
-
-    
-    @IBOutlet var  other:[RadioButton]!
     typealias ChangeOnCompletionHandler = (RadioButton,Bool) -> Void
     
+    @IBOutlet var  other:[RadioButton]!
     override var isSelected: Bool{
         didSet{
             if changeOnCompletionHandler != nil {
@@ -25,7 +23,6 @@ class RadioButton: UIButton {
         }
     }
     var changeOnCompletionHandler:ChangeOnCompletionHandler!
-
     func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
         self.changeOnCompletionHandler = changeOnCompletionHandler;
     }
