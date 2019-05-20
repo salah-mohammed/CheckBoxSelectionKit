@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CheckBoxSelectionKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "CheckBoxSelectionKit use for Create Custom CheckBox Buttons"
 
   # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "PageKit library library library library library library library library library library library library library library adas dasd sad asd  das dsa d sad asd sa das dsa d sad as das das dsa d asd asd asd "
 
-  s.homepage     = "git clone https://SalahMohamed@bitbucket.org/SalahMohamed/checkboxselectionkit"
+  s.homepage     = "https://bitbucket.org/salahmohamd/checkboxselectionkit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -133,6 +133,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 
 end

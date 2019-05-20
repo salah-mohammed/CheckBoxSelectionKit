@@ -8,11 +8,13 @@
 
 import UIKit
 
-class RadioButton: UIButton {
-    typealias ChangeOnCompletionHandler = (RadioButton,Bool) -> Void
-    
+open class RadioButton: UIButton {
+   public typealias  ChangeOnCompletionHandler = (RadioButton,Bool) -> Void
+    static var optional:Bool = false;
+
+    var relatedViews:[UIView]=[UIView]();
     @IBOutlet var  other:[RadioButton]!
-    override var isSelected: Bool{
+    override open var isSelected: Bool{
         didSet{
             if changeOnCompletionHandler != nil {
                 self.changeOnCompletionHandler(self,self.isSelected);
@@ -22,8 +24,8 @@ class RadioButton: UIButton {
             }
         }
     }
-    var changeOnCompletionHandler:ChangeOnCompletionHandler!
-    func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
+  open  var changeOnCompletionHandler:ChangeOnCompletionHandler!
+   open  func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
         self.changeOnCompletionHandler = changeOnCompletionHandler;
     }
     
@@ -35,14 +37,18 @@ class RadioButton: UIButton {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
         self.addTarget(self, action: #selector(handleClick), for: .touchUpInside)
 
     }
     @objc func handleClick(){
         if self.isSelected == true{
-            self.isSelected=false;
+            if RadioButton.optional==true {
+                self.isSelected=false;
+            }else{
+                self.isSelected=true;
+            }
         }else{
             self.otherButtonsOff()
             self.isSelected=true;

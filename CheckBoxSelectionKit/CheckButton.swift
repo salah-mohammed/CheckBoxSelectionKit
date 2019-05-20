@@ -12,9 +12,9 @@ struct Constant {
         
     }
 }
-class CheckButton: UIButton {
-    typealias ChangeOnCompletionHandler = (CheckButton,Bool) -> Void
-    var changeOnCompletionHandler:ChangeOnCompletionHandler!
+open class CheckButton: UIButton {
+    public typealias ChangeOnCompletionHandler = (CheckButton,Bool) -> Void
+    open var changeOnCompletionHandler:ChangeOnCompletionHandler!
     var on:Bool=false{
         didSet{
             if changeOnCompletionHandler != nil {
@@ -22,7 +22,7 @@ class CheckButton: UIButton {
             }
         }
     }
-    func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
+    open func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
         self.changeOnCompletionHandler = changeOnCompletionHandler;
     }
     

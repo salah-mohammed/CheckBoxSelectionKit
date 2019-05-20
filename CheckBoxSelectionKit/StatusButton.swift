@@ -8,11 +8,11 @@
 
 import UIKit
 
-class StatusButton: UIButton {
-    typealias ChangeOnCompletionHandler = (StatusButton,Any) -> Void
+open class StatusButton: UIButton {
+   public typealias ChangeOnCompletionHandler = (StatusButton,Any) -> Void
     
-    var changeOnCompletionHandler:ChangeOnCompletionHandler!
-    var status:Any!{
+   open var changeOnCompletionHandler:ChangeOnCompletionHandler!
+   open var status:Any!{
         didSet{
             if changeOnCompletionHandler != nil {
                 self.changeOnCompletionHandler(self,self.status);

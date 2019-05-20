@@ -9,23 +9,23 @@
 import Foundation
 import UIKit
 
-class RadioView: UIView {
-    typealias ChangeOnCompletionHandler = (RadioView,Bool) -> Void
+open class RadioView: UIView {
+   public typealias ChangeOnCompletionHandler = (RadioView,Bool) -> Void
 
     // should select one item at least
     static var optional:Bool = false;
     @IBOutlet var  other:[RadioView]!
     
-     var isSelected: Bool=false{
+    open var isSelected: Bool=false{
         didSet{
                 for handler  in self.changeOnCompletionHandler {
                     handler(self,self.isSelected);
                 }
         }
     }
-    var changeOnCompletionHandler:[ChangeOnCompletionHandler]=[ChangeOnCompletionHandler]();
+   open var changeOnCompletionHandler:[ChangeOnCompletionHandler]=[ChangeOnCompletionHandler]();
     
-    func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
+   open func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
         self.changeOnCompletionHandler.append(changeOnCompletionHandler);
         
     }
@@ -38,7 +38,7 @@ class RadioView: UIView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleClick))
         self.addGestureRecognizer(tap)
