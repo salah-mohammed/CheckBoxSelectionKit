@@ -13,6 +13,8 @@ struct Constant {
     }
 }
 open class CheckButton: UIButton {
+    @IBOutlet open var  other:[CheckButton]!
+
     public typealias ChangeOnCompletionHandler = (CheckButton,Bool) -> Void
     open var changeOnCompletionHandler:ChangeOnCompletionHandler!
     var on:Bool=false{

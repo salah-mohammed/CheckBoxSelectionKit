@@ -13,8 +13,8 @@ open class RadioView: UIView {
    public typealias ChangeOnCompletionHandler = (RadioView,Bool) -> Void
 
     // should select one item at least
-    static var optional:Bool = false;
-    @IBOutlet var  other:[RadioView]!
+    public static var optional:Bool = false;
+    @IBOutlet open var  other:[RadioView]!
     
     open var isSelected: Bool=false{
         didSet{
@@ -23,6 +23,7 @@ open class RadioView: UIView {
                 }
         }
     }
+    // this for implement
    open var changeOnCompletionHandler:[ChangeOnCompletionHandler]=[ChangeOnCompletionHandler]();
     
    open func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
@@ -42,7 +43,7 @@ open class RadioView: UIView {
         super.init(coder: aDecoder);
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleClick))
         self.addGestureRecognizer(tap)
-        
+//        crossOutlet(current: self);
         
     }
     @objc func handleClick(){
@@ -66,9 +67,18 @@ open class RadioView: UIView {
      }
      */
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+//    open override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        
+//    }
+    func crossOutlet(current:RadioView){
+        if current.other != nil {
+        var allButtons = current.other
+            allButtons?.append(current)
+        for item in current.other {
+            var arra:[RadioView] = (allButtons ?? []).filter { (tempItem) -> Bool in return  tempItem != item }
+            item.other=arra;
+            }
+        }
     }
-    
 }

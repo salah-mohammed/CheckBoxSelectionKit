@@ -10,10 +10,10 @@ import UIKit
 
 open class RadioButton: UIButton {
    public typealias  ChangeOnCompletionHandler = (RadioButton,Bool) -> Void
-    static var optional:Bool = false;
+    public static var optional:Bool = false;
 
     var relatedViews:[UIView]=[UIView]();
-    @IBOutlet var  other:[RadioButton]!
+    @IBOutlet open var  other:[RadioButton]!
     override open var isSelected: Bool{
         didSet{
             if changeOnCompletionHandler != nil {
@@ -65,5 +65,4 @@ open class RadioButton: UIButton {
      // Drawing code
      }
      */
-
 }
