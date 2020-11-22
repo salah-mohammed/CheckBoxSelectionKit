@@ -1,45 +1,115 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Result
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+# NavigationKit
 
----
+Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
+# Advantages
+* set Background Image for navigation bar and title color for every single screen.
+* set color for navigation bar and their title for every single screen.
+* Hide navigation bar feature for every single screen.
+* can make navigation bar color transparent for every single screen.
+* can set default navigation bar style if Viewcontroller not implement NavigationDelegate will take this default style.
 
-## Edit a file
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+# Requirements
+* IOS 13+ 
+* Swift 5+
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+# How used (configuration): 
 
----
+# Pod install
+```ruby
+pod 'NavigationKit',:git => "https://github.com/salah-mohammed/NavigationKit.git"
+ 
+```
+- First
 
-## Create a file
+```swift
+public class MainNavigationController: NavigationController {
 
-Next, you’ll add a new file to this repository.
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        NavigationManager.shared.navigationController=self;
+        // Do any additional setup after loading the view.
+    }
+    
+}
+```
+- Second
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+if you want set Navigation bar transparent and change title color .
+```swift
+class FirstViewController: UIViewController,NavigationDelegate {
+ 
+    var navigationData:NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.transparent,titleColor:UIColor.black))
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+ }
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+ ```
+ 
+ if you want to set Navigation bar color and set title color for it.
+ 
+ ```swift
 
----
+  class SecondViewController: UIViewController,NavigationDelegate {
+  
+  var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
+    
+        public override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+```
+if you want to hide Navigation bar.
 
-## Clone a repository
+ ```swift
+ class ThiredViewController: UIViewController,NavigationDelegate {
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.hide);
+    
+        public override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+ ```
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+if you want to set background image for Navigation bar and set title color for it.
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+ ```swift
+ class ForthViewController: UIViewController,NavigationDelegate {
+
+    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.backgroundImage(UIImage.init(named:"navigationImage")!), titleColor: UIColor.white))
+    
+        public override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+ ```
+- Thired
+
+if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
+```swift
+NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
+
+ ```
+# Configure Successfully
+
+# You can refresh navigation style by 
+```swift
+(self.navigationController as? MainNavigationController)?.refrehNavigationData();
+ ```
+## License
+
+NavigationKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/NavigationKit/blob/master/LICENSE) for details.
+
+# Developer's information to communicate
+
+- salah.mohamed_1995@hotmail.com
+- https://www.facebook.com/salah.shaker.7
+- +972597105861 (whatsApp And PhoneNumber)
+
