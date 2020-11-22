@@ -30,8 +30,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusButton2: StatusButton!
     @IBOutlet weak var statusButton3: StatusButton!
 
+    @IBOutlet weak var switchRadioView: UISwitch!
+    @IBOutlet weak var switchRadioButton: UISwitch!
+
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,7 +68,12 @@ class ViewController: UIViewController {
         self.radioView0.isSelected=true;
 //        RadioView.optional=true
     }
-
-
+    @IBAction func switchRadioView(_ sender: UISwitch) {
+        RadioView.optional=sender.isOn;
+    }
+    @IBAction func switchRadioButton(_ sender: UISwitch) {
+        RadioButton.optional=sender.isOn;
+    }
+    
 }
 

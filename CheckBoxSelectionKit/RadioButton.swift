@@ -42,6 +42,11 @@ open class RadioButton: UIButton {
         self.addTarget(self, action: #selector(handleClick), for: .touchUpInside)
 
     }
+    open override  func awakeFromNib() {
+        super.awakeFromNib();
+        self.crossOutlet(current: self);
+
+    }
     @objc func handleClick(){
         if self.isSelected == true{
             if RadioButton.optional==true {
@@ -58,11 +63,15 @@ open class RadioButton: UIButton {
         self.isSelected=false;
         self.otherButtonsOff();
     }
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
+
+    func crossOutlet(current:RadioButton){
+        if current.other != nil {
+        var allButtons = current.other
+            allButtons?.append(current)
+        for item in current.other {
+            var arra:[RadioButton] = (allButtons ?? []).filter { (tempItem) -> Bool in return  tempItem != item }
+            item.other=arra;
+            }
+        }
+    }
 }

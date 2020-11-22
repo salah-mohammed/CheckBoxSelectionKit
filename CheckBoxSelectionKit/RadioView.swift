@@ -43,8 +43,12 @@ open class RadioView: UIView {
         super.init(coder: aDecoder);
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleClick))
         self.addGestureRecognizer(tap)
-//        crossOutlet(current: self);
         
+    }
+    open override  func awakeFromNib() {
+        super.awakeFromNib();
+        self.crossOutlet(current: self);
+
     }
     @objc func handleClick(){
         if self.isSelected == true{

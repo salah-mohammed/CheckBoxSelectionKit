@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "PageKit library library library library library library library library library library library library library library adas dasd sad asd  das dsa d sad asd sa das dsa d sad as das das dsa d asd asd asd "
 
-  s.homepage     = "https://bitbucket.org/salahmohamd/checkboxselectionkit"
+  s.homepage     = "https://github.com/salah-mohammed/CheckBoxSelectionKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-   s.platform     = :ios, "9.0"
+   s.platform     = :ios, "13.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git clone https://SalahMohamed@bitbucket.org/SalahMohamed/checkboxselectionkit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git clone https://github.com/salah-mohammed/CheckBoxSelectionKit.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
