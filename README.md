@@ -6,11 +6,10 @@
 
 Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
 # Advantages
-* set Background Image for navigation bar and title color for every single screen.
-* set color for navigation bar and their title for every single screen.
-* Hide navigation bar feature for every single screen.
-* can make navigation bar color transparent for every single screen.
-* can set default navigation bar style if Viewcontroller not implement NavigationDelegate will take this default style.
+* CheckButton for checkbox.
+* RadioButton Used for radio button.
+* RadioView Used for radio view for custom view.
+* StatusButton used for chanage status of button.
 
 
 # Requirements
