@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
 
-# NavigationKit
+# CheckBoxSelectionKit
 
 Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
 # Advantages
@@ -21,7 +21,7 @@ Navigation Kit used for make threat with screen that have differents navigation 
 
 # Pod install
 ```ruby
-pod 'NavigationKit',:git => "https://github.com/salah-mohammed/NavigationKit.git"
+pod 'CheckBoxSelectionKit',:git => "https://github.com/salah-mohammed/CheckBoxSelectionKit.git"
  
 ```
 - First
