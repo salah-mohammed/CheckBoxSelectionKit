@@ -20,7 +20,7 @@ open class StatusButton: UIButton {
             }
         }
     }
-    func setChangeOnCompletionHandler(changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
+    open func setChangeOnCompletionHandler(_ changeOnCompletionHandler:@escaping ChangeOnCompletionHandler){
         self.changeOnCompletionHandler = changeOnCompletionHandler;
     }
     

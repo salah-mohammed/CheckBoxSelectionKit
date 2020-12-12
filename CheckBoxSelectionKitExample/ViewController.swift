@@ -53,20 +53,41 @@ class ViewController: UIViewController {
         self.radioButton3.setChangeOnCompletionHandler(changeOnCompletionHandler: radioButtonHandler);
         self.radioButton0.isSelected=true;
         //////////////////////////////////////////////////////////////////////////////////////////////
+        // Check Button
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // Status Button
+        let statusButtonHandler = { (radioView:StatusButton, object:Any) in
+//            if (object as String) == "1" {
+//                radioView.backgroundColor=UIColor.red;
+//            }else{
+//                radioView.backgroundColor=UIColor.blue;
+//            }
+        }
+        self.statusButton0.setChangeOnCompletionHandler(statusButtonHandler)
+        self.statusButton1.setChangeOnCompletionHandler(statusButtonHandler);
+        self.statusButton2.setChangeOnCompletionHandler(statusButtonHandler);
+        self.statusButton3.setChangeOnCompletionHandler(statusButtonHandler);
         
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // radio view setup
         self.radioView0.title="0";
         self.radioView1.title="1";
         self.radioView2.title="2";
         self.radioView3.title="3";
 
-        
-        
-//        self.radioView0.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
-//        self.radioView1.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
-//        self.radioView2.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
-//        self.radioView3.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        let radioViewHandler = { (radioView:RadioView, isSelected:Bool) in
+            if isSelected == true {
+                radioView.backgroundColor=UIColor.red;
+            }else{
+                radioView.backgroundColor=UIColor.blue;
+            }
+        }
+        self.radioView0.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView1.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView2.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView3.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
         self.radioView0.isSelected=true;
-//        RadioView.optional=true
+        RadioView.optional=true
     }
     @IBAction func switchRadioView(_ sender: UISwitch) {
         RadioView.optional=sender.isOn;
