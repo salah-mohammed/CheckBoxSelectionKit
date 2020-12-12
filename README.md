@@ -84,19 +84,9 @@ pod 'CheckBoxSelectionKit',:git => "https://github.com/salah-mohammed/CheckBoxSe
  ```
  
  - Forth:StatusButton
-
-if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
-```swift
-NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-
- ```
  
 # Configure Successfully
 
-# You can refresh navigation style by 
-```swift
-(self.navigationController as? MainNavigationController)?.refrehNavigationData();
- ```
 ## License
 
 NavigationKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/NavigationKit/blob/master/LICENSE) for details.
