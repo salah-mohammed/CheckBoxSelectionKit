@@ -27,6 +27,25 @@ pod 'CheckBoxSelectionKit',:git => "https://github.com/salah-mohammed/CheckBoxSe
 
 ```swift
 
+ override func viewDidLoad() {
+       super.viewDidLoad()
+       
+           let radioViewHandler = { (radioView:RadioView, isSelected:Bool) in
+            if isSelected == true {
+                radioView.backgroundColor=UIColor.red;
+            }else{
+                radioView.backgroundColor=UIColor.blue;
+            }
+        }
+        self.radioView0.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView1.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView2.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView3.setChangeOnCompletionHandler(changeOnCompletionHandler: radioViewHandler);
+        self.radioView0.isSelected=true;
+        RadioView.optional=true
+
+}
+
 ```
 - Second:RadioButton
 
