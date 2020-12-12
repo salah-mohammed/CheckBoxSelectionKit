@@ -23,7 +23,7 @@ Navigation Kit used for make threat with screen that have differents navigation 
 pod 'CheckBoxSelectionKit',:git => "https://github.com/salah-mohammed/CheckBoxSelectionKit.git"
  
 ```
-- First
+- First: CheckButton
 
 ```swift
 public class MainNavigationController: NavigationController {
@@ -36,7 +36,7 @@ public class MainNavigationController: NavigationController {
     
 }
 ```
-- Second
+- Second:RadioButton
 
 if you want set Navigation bar transparent and change title color .
 ```swift
@@ -89,13 +89,22 @@ if you want to set background image for Navigation bar and set title color for i
     }
 }
  ```
-- Thired
+- Thired:RadioView
 
 if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
 ```swift
 NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
 
  ```
+ 
+ - Forth:StatusButton
+
+if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
+```swift
+NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
+
+ ```
+ 
 # Configure Successfully
 
 # You can refresh navigation style by 
