@@ -26,68 +26,31 @@ pod 'CheckBoxSelectionKit',:git => "https://github.com/salah-mohammed/CheckBoxSe
 - First: CheckButton
 
 ```swift
-public class MainNavigationController: NavigationController {
 
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        NavigationManager.shared.navigationController=self;
-        // Do any additional setup after loading the view.
-    }
-    
-}
 ```
 - Second:RadioButton
 
-if you want set Navigation bar transparent and change title color .
 ```swift
-class FirstViewController: UIViewController,NavigationDelegate {
- 
-    var navigationData:NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.transparent,titleColor:UIColor.black))
-    
-    public override func viewDidLoad() {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
-    }
- }
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        // radio button setup
+        let radioButtonHandler = { (radioButton:RadioButton, isSelected:Bool) in
+            if isSelected == true {
+                radioButton.backgroundColor=UIColor.red;
+            }else{
+                radioButton.backgroundColor=UIColor.blue;
+            }
+        }
+        self.radioButton0.setChangeOnCompletionHandler(changeOnCompletionHandler: radioButtonHandler);
+        self.radioButton1.setChangeOnCompletionHandler(changeOnCompletionHandler: radioButtonHandler);
+        self.radioButton2.setChangeOnCompletionHandler(changeOnCompletionHandler: radioButtonHandler);
+        self.radioButton3.setChangeOnCompletionHandler(changeOnCompletionHandler: radioButtonHandler);
+        self.radioButton0.isSelected=true;
+        }
 
- ```
- 
- if you want to set Navigation bar color and set title color for it.
- 
- ```swift
-
-  class SecondViewController: UIViewController,NavigationDelegate {
-  
-  var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-```
-if you want to hide Navigation bar.
-
- ```swift
- class ThiredViewController: UIViewController,NavigationDelegate {
-
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.hide);
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
- ```
-
-if you want to set background image for Navigation bar and set title color for it.
-
- ```swift
- class ForthViewController: UIViewController,NavigationDelegate {
-
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.backgroundImage(UIImage.init(named:"navigationImage")!), titleColor: UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
  ```
 - Thired:RadioView
 
